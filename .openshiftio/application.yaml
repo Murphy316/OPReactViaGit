@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Template
 metadata:
-  name: react-web-app
+  name: react-web-app-via-git
   annotations:
     iconClass: icon-jboss
     tags: nodejs, react, web app
@@ -13,7 +13,7 @@ parameters:
   - name: SOURCE_REPOSITORY_URL
     description: The source URL for the application
     displayName: Source URL
-    value: "https://github.com/lholmquist/react-web-app"
+    value: "https://github.com/Murphy316/OPReactViaGit"
     required: true
   - name: SOURCE_REPOSITORY_REF
     description: The branch name for the application
