@@ -148,13 +148,13 @@ objects:
   kind: DeploymentConfig
   metadata:
     labels:
-      app: react-web-app
-    name: react-web-app
+      app: react-web-app-via-git
+    name: react-web-app-via-git
   spec:
     replicas: 1
     revisionHistoryLimit: 2
     selector:
-      app: react-web-app
+      app: react-web-app-via-git
     strategy:
       rollingParams:
         timeoutSeconds: 3600
