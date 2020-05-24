@@ -10,6 +10,9 @@ function App() {
         <p>
           already edit, is that works fine?
         </p>
+		<p>
+		  no more command line when you make changes on Github and you wants update website
+        </p>
         <a
           className="App-link"
           href="https://reactjs.org"
