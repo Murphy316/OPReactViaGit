@@ -8,7 +8,9 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Hello World
+          already edit, is that works fine?
+		  *no need working on command line any more
+		  *just re-build app via console
         </p>
         <a
           className="App-link"
