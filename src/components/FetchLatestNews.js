@@ -1,7 +1,7 @@
 /*
  * @Author: mm
  * @Date: 2020-06-02 10:39:02
- * @LastEditTime: 2020-06-06 13:46:10
+ * @LastEditTime: 2020-06-07 10:28:32
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \OPReactViaGit\src\components\FetchRandomUser.js
@@ -15,8 +15,8 @@
 
  export default function FetchLatestNews() {
   const [data, setData] = useState([]);
-  //const [query, setQuery] = useState();
-  const [skip, setSkip] = useState(0);
+  const [query, setQuery] = useState("releases");
+  const [skip, setSkip] = useState(1);
 
   //default with nothing..
   const [url, setUrl] = useState(
@@ -35,7 +35,7 @@
  
   return (
     <React.Fragment>
-      {/*<input
+      <input
         type="text"
         value={query}
         onChange={event => setQuery(event.target.value)}
@@ -43,20 +43,19 @@
       <button
         type="button"
         onClick={() =>
-          setUrl(`https://news.api.gov.bc.ca/api/Posts/Latest/home/default?postKind=releases&count=3&skip=0&api-version=1.0`)
+          setUrl(`https://news.api.gov.bc.ca/api/Posts/Latest/home/default?postKind=${query}&count=5&skip=0&api-version=1.0`)
         }
       >
         Search
       </button>
       <p>Search category: releases, stories, factsheets, updates or default</p>
-      */}
 
       <ul>
         {data.map(item => (
           <li key={item.atomId}>
             {item.documents.map(documents => <h4 key = {documents.languageId}>{documents.headline} </h4>)}
-            {/*<b> news type:</b>  {item.kind} <br/><br/>
-            <b> Summary:</b>  {item.summary} 
+           <b> news type:</b>  {item.kind} <br/><br/>
+             {/*<b> Summary:</b>  {item.summary} 
             */}
           </li> 
         ))}
@@ -66,7 +65,7 @@
           type="button"
           onClick={() => {
             setSkip(skip + 1);
-            setUrl(`https://news.api.gov.bc.ca/api/Posts/Latest/home/default?postKind=releases&count=5&skip=${skip}&api-version=1.0`);
+            setUrl(`https://news.api.gov.bc.ca/api/Posts/Latest/home/default?postKind=${query}&count=5&skip=${skip}&api-version=1.0`);
             
           }
           }
