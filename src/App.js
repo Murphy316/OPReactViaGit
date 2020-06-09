@@ -1,28 +1,21 @@
-/*
- * @Author: your name
- * @Date: 2020-05-24 00:16:20
- * @LastEditTime: 2020-06-06 13:38:26
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \OPReactViaGit\src\App.js
- */ 
-import React, { Component } from "react";
-import "./App.css";
-import FetchLatestNews from "./components/FetchLatestNews";
+import React from 'react';
+import Header from './Header.js';
+import Footer from './Footer.js';
+import Navbar from './Navbar.js';
+import FetchLatestNews from './FetchLatestNews.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
+//import './App.css';
 
-
-class App extends Component {
-  state = {
-    visible: true
-  };
-
-  render() {
-    return (
-      <div className="App">
-        <FetchLatestNews />
-      </div>
-    );
-  }
+function App() {
+  return (
+    <div>
+      <Header />
+      <Navbar />
+      <FetchLatestNews />
+      <Footer />
+     
+    </div>
+  );
 }
 
 export default App;
