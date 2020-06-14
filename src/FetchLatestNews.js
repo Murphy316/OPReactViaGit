@@ -1,11 +1,20 @@
+/*
+ * @Author: your name
+ * @Date: 2020-06-09 10:15:15
+ * @LastEditTime: 2020-06-13 21:25:15
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \OPReactViaGit\src\FetchLatestNews.js
+ */ 
 
  import React, { useEffect, useState } from "react";
  import axios from "axios";
 
  export default function FetchLatestNews() {
-  const [data, setData] = useState([]);
+  var [data, setData] = useState([]);
   const [query, setQuery] = useState("releases");
   const [skip, setSkip] = useState(1);
+//remove &rsquo from api
 
   //default with nothing..
   const [url, setUrl] = useState(
@@ -17,6 +26,7 @@
     const fetchData = async () => {
       const result = await axios(url);
       setData(result.data);
+
     };
  
     fetchData();
@@ -40,12 +50,19 @@
       <p>Search category: releases, stories, factsheets, updates or default</p>
 
       <ul>
-        {data.map(item => (
+        {data.map(item =>  (
           <li key={item.atomId}>
             {item.documents.map(documents => <h4 key = {documents.languageId}>{documents.headline} </h4>)}
-           <b> news type:</b>  {item.kind} <br/><br/>
-             {/*<b> Summary:</b>  {item.summary} 
-            */}
+            <b> news type:</b>  {item.kind} <br/>
+            <b> news key:</b>  {item.key} <br/>
+            <b> Summary:</b>  {item.documents.map(documents => <p key = {documents.languageId}>{documents.detailsHtml = documents.detailsHtml.replace(/(<([^>]+)>)/ig, '')
+                                                                                                                                             .replace(/&rsquo;/ig, '\'')
+                                                                                                                                             .replace(/(&ldquo;)|(&rdquo;)/g, '"')
+                                                                                                                                             .replace(/&ndash;/ig, ' - ')
+                                                                                                                                             .replace(/&lsquo;/, '\'')
+                                                                                                                                             .replace(/&nbsp;/ig, ' ')
+
+                                                                                                                                             }</p>)}
           </li> 
         ))}
       </ul>
