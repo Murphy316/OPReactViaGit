@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-06-09 10:15:15
- * @LastEditTime: 2020-06-13 21:25:15
+ * @LastEditTime: 2020-06-13 21:28:58
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \OPReactViaGit\src\FetchLatestNews.js
@@ -14,7 +14,6 @@
   var [data, setData] = useState([]);
   const [query, setQuery] = useState("releases");
   const [skip, setSkip] = useState(1);
-//remove &rsquo from api
 
   //default with nothing..
   const [url, setUrl] = useState(
@@ -55,6 +54,7 @@
             {item.documents.map(documents => <h4 key = {documents.languageId}>{documents.headline} </h4>)}
             <b> news type:</b>  {item.kind} <br/>
             <b> news key:</b>  {item.key} <br/>
+            {/*//reverse ASCII code from api ..*/}
             <b> Summary:</b>  {item.documents.map(documents => <p key = {documents.languageId}>{documents.detailsHtml = documents.detailsHtml.replace(/(<([^>]+)>)/ig, '')
                                                                                                                                              .replace(/&rsquo;/ig, '\'')
                                                                                                                                              .replace(/(&ldquo;)|(&rdquo;)/g, '"')
