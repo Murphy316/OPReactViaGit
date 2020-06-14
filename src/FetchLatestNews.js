@@ -1,14 +1,3 @@
-/*
- * @Author: mm
- * @Date: 2020-06-02 10:39:02
- * @LastEditTime: 2020-06-07 10:28:32
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \OPReactViaGit\src\components\FetchRandomUser.js
- */ 
-
-//postKind: One of: releases, stories, factsheets, updates or default (releases+stories except top/feature)
-//https://news.api.gov.bc.ca/api/Posts/Latest/home/default?postKind=${query}&count=1&skip=0&api-version=1.0
 
  import React, { useEffect, useState } from "react";
  import axios from "axios";
@@ -76,4 +65,3 @@
     </React.Fragment>
   );
 }
- 
