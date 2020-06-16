@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-06-09 10:15:15
- * @LastEditTime: 2020-06-13 23:52:05
+ * @LastEditTime: 2020-06-14 20:06:43
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \OPReactViaGit\src\FetchLatestNews.js
@@ -59,7 +59,7 @@
       >
         Search
       </button>
-      <p>Search category: releases, stories, factsheets, updates or default</p>
+      <p>Search category: releases, stories, factsheets, updates or default.</p>
 
       <ul>
         {data.map(item =>  (
